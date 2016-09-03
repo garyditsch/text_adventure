@@ -1,13 +1,13 @@
 
-# Title: Game Week #
+# Title: Game Week
 
-## Description ## 
+### Description
 
 It's college football season and you are getting ready for Saturday's game. As a player you know that each day you need to consider your training, nutrition and rest in order to be ready for the game. Your challenge is to go through each day of the week. Make a decision to foucs on one of the three areas, then try and get the most benefit from the preparation.  If you do well, on game day you will be strong, which will make it easier for you to score a touchdown. 
 
-## Game ## 
+# Game
 
-# Strength #
+### Strength
 
 Your strength increases or decreases each day based on the challenge. Based upon your strength on day 7 (Game Day), you will get a different number of chances to score a touchdown. 
 
@@ -18,24 +18,24 @@ Game Day Chances based on Score:
 - 31 to 60: 4 downs
 - 61 to 90: 8 downs
 
-# Scoring Touchdown #
+### Scoring Touchdown
 
 - On gameday you will score a touchdown if you win the 'guessing game', therefore each chance is another guess. The range used for the guessing game will be 0 to 50.
 
-# Day Challenges #
+### Day Challenges 
 
 Your have three choices each day to focus your preparation:  Physical Training, Nutrition, Rest. 
 
-- Physical Training: Guessing Game, using 1 to 15, with three guesses. 
-* Win = score 15
-* Lose = score 0
+1. Physical Training: Guessing Game, using 1 to 15, with three guesses. 
+..* Win = score 15
+..* Lose = score 0
 
-- Nutrition: Rock, Paper, Scissors like game- but using nutritional terms.. creatine, Sword, whey protein. The scoring is the same as that of physical training, where you get 15 points if you win and 0 points if you do not. Somewhat arbitrarily chosen the hiearchy of the items is: 
-* Whey > Creatine
-* Creatine > Sword
-* Sword > Whey
+2. Nutrition: Rock, Paper, Scissors like game- but using nutritional terms.. creatine, Sword, whey protein. The scoring is the same as that of physical training, where you get 15 points if you win and 0 points if you do not. Somewhat arbitrarily chosen the hiearchy of the items is: 
+..* Whey > Creatine
+..* Creatine > Sword
+..* Sword > Whey
 
-- Rest: Because there are so many factors that influence rest, this is a random chance game. A random number between 0 and 100 is generated. If the number is below 50 then you win the 'good night sleep lotto' and get 15 points. If the number is above 50 you lose and get sleepy and don't get any points. 
+3. Rest: Because there are so many factors that influence rest, this is a random chance game. A random number between 0 and 100 is generated. If the number is below 50 then you win the 'good night sleep lotto' and get 15 points. If the number is above 50 you lose and get sleepy and don't get any points. 
 
 ## Wishlist for game enhancements: ##
 
