@@ -1,3 +1,5 @@
+import random 
+
 def get_menu_selection(menu_items):
     """
     Display a menu and return the user's selection
@@ -14,7 +16,7 @@ def display_selection_error(menu_selection):
     else:
         print("\n{} is not a number, please enter a number from the menu above" .format(menu_selection))
 
-class Display():
+class Weekday():
     DAILY_FOCUS = (
        "1: Focus on your training", 
        "2: Focus on your nutrition",
@@ -25,8 +27,33 @@ class Display():
     def __init__(self):
         self.focus = []
 
-    def play_training(training):
-        pass
+    def play_training(self):
+
+        print("\nYour training hard!")
+
+        self.chance = 0
+        self.guesses = 3
+        self.answer = random.randrange(0, 15)
+        
+        while self.chance < self.guesses:
+            guess = input("\nWhat is your guess? ")
+            self.chance += 1
+            if guess == " " or not guess.isdigit():
+                self.chance -= 1
+                print("\nis an invalid option, please try again")
+            elif int(guess) == self.answer:
+                print("\nCongrats your strength increased by 15!")
+                break
+            elif self.chance < self.guesses:
+                if int(guess) < self.answer:
+                    print("\nToo Low, Try Again")
+                    print("\nThat was guess: {} . You have {} guesses left.".format(self.chance, self.guesses - self.chance))
+                else:
+                    print("\nToo High, Try Again")
+                    print("\nThat was guess: {} . You have {} guesses left.".format(self.chance, self.guesses - self.chance))
+            else:
+                print("\nSorry your training was not very good today. Train harder tommorrow!")
+
 
     def play_nutrition(nutrition):
         pass
@@ -49,13 +76,34 @@ class Display():
             else:
                 display_selection_error(menu_selection)
 
+
+
+# class Display():
+#     def __init__(self):
+#         self.focus = []
+
+#     def display_focus(self):
+#         while True:
+#             menu_selection = get_menu_selection(self.DAILY_FOCUS)
+
+#             if menu_selection == "0": 
+#                 break
+#             elif menu_selection == "1":
+#                 self.play_training()
+#             elif menu_selection == "2":
+#                 self.play_nutrition()
+#             elif menu_selection == "3":
+#                 self.play_rest()
+#             else:
+#                 display_selection_error(menu_selection)
+
 def main():
     """
     Main Loop
     """
 
-    display = Display()
-    display.display_focus()
+    weekday = Weekday()
+    weekday.display_focus()
 
 if __name__ == '__main__':
     main()
