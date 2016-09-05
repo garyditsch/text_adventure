@@ -7,9 +7,9 @@
 -- methods: play_football
 
 3. Weekday
--- the daily training focus by the player, with the resulting ability to play the game associated with the daily focus. 
+-- the daily training focus by the player, with the resulting ability to play the game associated with the daily focus. Get the day of week that the player is on.
 
--- methods: play_training, play_nutrition, play_rest.
+-- methods: play_training, play_nutrition, play_rest, day_of_week
 
 4. Player
 -- get player name, team, set initial strength, track 

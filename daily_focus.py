@@ -16,16 +16,41 @@ def display_selection_error(menu_selection):
     else:
         print("\n{} is not a number, please enter a number from the menu above" .format(menu_selection))
 
+class Display():
+
+    MENU_ITEMS = (
+       "1: Setup Player", 
+       "2: Start Training",
+       "3: Save Game", 
+       "0: Exit",
+    )
+
+    def display_main(self):
+        while True:
+            menu_selection = get_menu_selection(self.MENU_ITEMS)
+
+            if menu_selection == "0": 
+                break
+            elif menu_selection == "1":
+                pass
+            elif menu_selection == "2":
+                pass
+            elif menu_selection == "3":
+                pass
+            else:
+                display_selection_error(menu_selection)
+
+
 class Weekday():
-    DAILY_FOCUS = (
+    FOCUS_AREA = (
        "1: Focus on your training", 
        "2: Focus on your nutrition",
        "3: Focus on your rest", 
        "0: Exit",
     )
 
-    def __init__(self):
-        self.focus = []
+    # def __init__(self):
+    #     weekday = Weekday()
 
     def play_training(self):
 
@@ -63,7 +88,7 @@ class Weekday():
 
     def display_focus(self):
         while True:
-            menu_selection = get_menu_selection(self.DAILY_FOCUS)
+            menu_selection = get_menu_selection(self.FOCUS_AREA)
 
             if menu_selection == "0": 
                 break
@@ -76,34 +101,13 @@ class Weekday():
             else:
                 display_selection_error(menu_selection)
 
-
-
-# class Display():
-#     def __init__(self):
-#         self.focus = []
-
-#     def display_focus(self):
-#         while True:
-#             menu_selection = get_menu_selection(self.DAILY_FOCUS)
-
-#             if menu_selection == "0": 
-#                 break
-#             elif menu_selection == "1":
-#                 self.play_training()
-#             elif menu_selection == "2":
-#                 self.play_nutrition()
-#             elif menu_selection == "3":
-#                 self.play_rest()
-#             else:
-#                 display_selection_error(menu_selection)
-
 def main():
     """
     Main Loop
     """
 
-    weekday = Weekday()
-    weekday.display_focus()
+    display = Display()
+    display.display_main()
 
 if __name__ == '__main__':
     main()
