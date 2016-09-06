@@ -19,26 +19,44 @@ def display_selection_error(menu_selection):
 class Display():
 
     MENU_ITEMS = (
-       "1: Setup Player", 
-       "2: Start Training",
+       "1: Start Training",
+       "2: Play Football Game",
        "3: Save Game", 
        "0: Exit",
     )
 
-    def display_main(self):
+    def display_main(self, day):
         while True:
-            menu_selection = get_menu_selection(self.MENU_ITEMS)
+            # print('\nIt is {}, how is your training going?'.format(day))
+            print('\nYou currently have a strength of: {}'.format(day.player.strength))
 
-            if menu_selection == "0": 
+            menu_selection = get_menu_selection(self.MENU_ITEMS)
+            if menu_selection == "0":
+                print(day)
                 break
             elif menu_selection == "1":
-                pass
+                day.display_focus()
             elif menu_selection == "2":
                 pass
             elif menu_selection == "3":
                 pass
             else:
                 display_selection_error(menu_selection)
+
+class Player():
+
+    def __init__(self):
+        self.get_name()
+        self.get_team()
+        self.strength = 0
+
+    def get_name(self):
+        self.name = input("Enter your name: ")
+        return self.name
+
+    def get_team(self):
+        self.team = input("Enter your team name: ")
+        return self.team
 
 
 class Weekday():
@@ -49,8 +67,9 @@ class Weekday():
        "0: Exit",
     )
 
-    # def __init__(self):
-    #     weekday = Weekday()
+    def __init__(self, player):
+        self.player = player
+        
 
     def play_training(self):
 
@@ -105,9 +124,25 @@ def main():
     """
     Main Loop
     """
+    print('\nWelcome to College Football Training')
 
-    display = Display()
-    display.display_main()
+    player = Player()
+
+    print('\nOk ... {}  Prepare well this week to have a great game on Saturday'.format(player.name))
+    print('If you get the most out of the training, you may score a touchdown for the {}'.format(player.team))
+
+    sunday = Weekday(player)
+    monday = Weekday(player)
+    tuesday = Weekday(player)
+    wednesday = Weekday(player)
+    thursday = Weekday(player)
+    friday = Weekday(player)
+
+    arr = [sunday, monday, tuesday, wednesday, thursday, friday]
+
+    for day in arr: 
+        display = Display()
+        display.display_main(day)
 
 if __name__ == '__main__':
     main()
