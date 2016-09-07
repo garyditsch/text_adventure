@@ -1,4 +1,5 @@
 import random 
+import sys
 
 def get_menu_selection(menu_items):
     """
@@ -180,6 +181,7 @@ class Weekday():
                     print("\nThat was guess: {} . You have {} guesses left.".format(self.chance, self.guesses - self.chance))
             else:
                 if self.player.team == "HUSKERS":
+                    print("\n"*20)
                     print("\nAs a Husker we expect more from you, but no worries your teammates earned the win regardless of your poor effort.")
                     print('\n')
                     print('           _____                         ____                   ')
@@ -190,8 +192,9 @@ class Weekday():
                     print('          \_____|\__,_|_| |_| |_|\___|  \____/  \_/ \___|_|     ')
                     print('\n')
                     print('=='*10)
-                    break
+                    sys.exit()
                 else:
+                    print("\n"*20)
                     print("\nPrepare better. And consider transferring to a new school, your team lost again.")
                     print('\n')
                     print('           _____                         ____                   ')
@@ -202,7 +205,7 @@ class Weekday():
                     print('          \_____|\__,_|_| |_| |_|\___|  \____/  \_/ \___|_|     ')
                     print('\n')
                     print('=='*10)
-                    break
+                    sys.exit()
 
 
     def display_focus(self):
