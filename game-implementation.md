@@ -12,7 +12,7 @@
 -- methods: play_training, play_nutrition, play_rest, day_of_week
 
 4. Player
--- get player name, team, set initial strength, track 
+-- get player name, team, set initial strength
 
 5. Display
 -- menu that gets players choice of what they want to do for the day
