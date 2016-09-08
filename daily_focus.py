@@ -115,17 +115,17 @@ class Weekday():
         
         if self.nutrition_choice == "WHEY":
             if self.random_nutrition_choice == "WHEY":
-                print("\nUg.. bad choice! It must have been a bad batch and make your stomach upset. Train hard tomorrow.")
+                print("\nUg.. bad choice! It must have been a bad batch and made your stomach upset. Train hard tomorrow.")
             elif self.random_nutrition_choice == "CREATINE":
                 print("\nCongrats your strength training is going to pay off. You increased your strength by 15!")
                 self.player.strength = self.player.strength + 15
             else:
-                 print("\nUg.. bad choice! It must have been a bad batch and make your stomach upset. Train hard tomorrow.")
+                 print("\nUg.. bad choice! It must have been a bad batch and made your stomach upset. Train hard tomorrow.")
         elif self.nutrition_choice == "CREATINE":
             if self.random_nutrition_choice == "WHEY":
-                 print("\nUg.. bad choice! It must have been a bad batch and make your stomach upset. Train hard tomorrow.")
+                 print("\nUg.. bad choice! It must have been a bad batch and made your stomach upset. Train hard tomorrow.")
             elif self.random_nutrition_choice == "CREATINE":
-                 print("\nUg.. bad choice! It must have been a bad batch and make your stomach upset. Train hard tomorrow.")
+                 print("\nUg.. bad choice! It must have been a bad batch and made your stomach upset. Train hard tomorrow.")
             else:
                 print("\nCongrats your strength training is going to pay off. You increased your strength by 15!")
                 self.player.strength = self.player.strength + 15
@@ -134,13 +134,42 @@ class Weekday():
                 print("\nCongrats your strength training is going to pay off. You increased your strength by 15!")
                 self.player.strength = self.player.strength + 15
             elif self.random_nutrition_choice == "CREATINE":
-                 print("\nUg.. bad choice! It must have been a bad batch and make your stomach upset. Train hard tomorrow.")
+                 print("\nUg.. bad choice! It must have been a bad batch and made your stomach upset. Train hard tomorrow.")
             else:
-                 print("\nUg.. bad choice! It must have been a bad batch and make your stomach upset. Train hard tomorrow.")
+                 print("\nUg.. bad choice! It must have been a bad batch and made your stomach upset. Train hard tomorrow.")
         
 
-    def play_rest(rest):
-        pass
+    def play_rest(self):
+        print("\n"*50)
+        print("==="*10)
+        print("Getting a good night's sleep is critical to good preparation.")
+        print("Congrats on focusing on sound sleep.")
+        print("Now go to sleep and see how rested you wake up.")
+        print("==="*10)
+    
+        self.answer = random.randrange(1, 100)
+
+        print("==="*10)
+        while True: 
+            blank = input("Press the ENTER key to wake up: ")
+            if not blank == "":
+                print('Hey.. you are not waking up very quickly. Try hitting ENTER again.')
+                continue
+            else:
+                if self.answer >= 50:
+                    print("\n"*50)
+                    print("==="*10)
+                    print('It looks like you got a great night of sleep. Your strength benefit from that!')
+                    self.player.strength = self.player.strength + 15
+                    print("==="*10)
+                    break
+                else:
+                    print("\n"*50)
+                    print("==="*10)
+                    print('It seems that the coeds were out late and kept you up.')
+                    print('Sometimes students just do not understand what it takes to prepare.')
+                    print("==="*10)
+                    break
 
     def play_football(self):
         print("==="*10)
@@ -228,6 +257,7 @@ class Weekday():
             else:
                 display_selection_error(menu_selection)
         else:
+            print('\n'*50)
             print('Hey {}... you already chosen your focus for today.'.format(self.player.name))
             print('It is time to move on to tomorrow.')
             print('The rest of the {} are waiting for you to join them!'.format(self.player.team))
@@ -270,6 +300,7 @@ def main():
 
     for day in arr: 
         display = Display()
+        print("\n"*50)
         print("=="*10)
         print("Today is {}".format(title[day_count]))
         day_count += 1
