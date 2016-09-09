@@ -17,14 +17,25 @@ def display_selection_error(menu_selection):
 
 class Display():
 
+    def __init__(self):
+        self.current_day = None
+
     MENU_ITEMS = (
        "1: Prepare for Game Day",
        "2: Play Football Game",
        "3: Save Game", 
        "0: Go to next day",
+       # """ add exit option """
     )
 
-    def display_main(self, banana):
+    FOCUS_AREA = (
+       "1: Focus on your training", 
+       "2: Focus on your nutrition",
+       "3: Focus on your rest", 
+       "0: Return to main menu",
+    )
+
+    def display_main(self):
         while True:
             print('=='*10)
             # print('\nYou currently have a strength of: {}'.format(banana.player.strength))
@@ -33,10 +44,40 @@ class Display():
             if menu_selection == "0":
                 break
             elif menu_selection == "1":
-                banana.display_focus()
+                self.display_focus()
             elif menu_selection == "2":
-                banana.play_football()
+                pass
             elif menu_selection == "3":
                 pass
             else:
                 display_selection_error(menu_selection)
+
+    def display_focus(self):
+        print('\n')
+        print('=='*10)
+        # if self.training_option > 0:
+        menu_selection = get_menu_selection(self.FOCUS_AREA)
+
+        if menu_selection == "0": 
+            pass
+        elif menu_selection == "1":
+            # self.training_option -= 1
+            self.current_day.play_training()
+            # pass
+        elif menu_selection == "2":
+            # self.training_option -= 1
+            self.current_day.play_nutrition()
+            pass
+        elif menu_selection == "3":
+            # self.training_option -= 1
+            self.current_day.play_rest()
+            pass
+        else:
+            display_selection_error(menu_selection)
+        # else:
+        #     print('\n'*50)
+        #     print('Hey {}... you already chosen your focus for today.'.format(self.player.name))
+        #     print('It is time to move on to tomorrow.')
+        #     print('The rest of the {} are waiting for you to join them!'.format(self.player.team))
+        #     print('\nSelect "0" from the menu below to get to the next day.')
+

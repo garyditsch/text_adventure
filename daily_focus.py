@@ -304,7 +304,6 @@ def main():
         print("=="*10)
         print("Today is {}".format(title[day_count]))
         day_count += 1
-        # while played_football == False:
         if day == saturday:
             day.play_football()
         else:

@@ -1,0 +1,25 @@
+Player
+strength
+name
+team
+
+Weekday
+day_of_week
+training_status
+
+- training_focus
+- nutrition_focus
+- rest_focus
+- play_football
+
+Display
+main_menu
+- train
+- go_to_next_day
+
+daily_menu
+- weekday actions
+
+Game
+- setup
+- initial display for set up
