@@ -2,40 +2,51 @@ import random
 
 class Training_actions():
 
-    def __init__(self):
+    def __init__(self, player):
         self.training_option = 1
+        self.player = player
+
 
     
-    def play_training(self, player):
-        print("==="*10)
-        print("To benefit from the weight room, you need to do the right amount of reps.")
-        print("\nUnfortunately your strength coach sucks and thinks you should guess the right number.")
-        print("\nHe has given you 3 chances to guess a number between 1 and 15.")
-        print("\nIf you get it right, he'll help you. Otherwise you are on your own.")
+    def play_training(self):
+        if self.training_option > 0:
 
-        self.chance = 0
-        self.guesses = 3
-        self.answer = random.randrange(1, 15)
-        
-        while self.chance < self.guesses:
-            guess = input("\nWhat is your guess? ")
-            self.chance += 1
-            if guess == " " or not guess.isdigit():
-                self.chance -= 1
-                print("\nis an invalid option, please try again")
-            elif int(guess) == self.answer:
-                print("\nCongrats your strength training is going to pay off. You increased your strength by 15!")
-                player.strength = player.strength + 15
-                break
-            elif self.chance < self.guesses:
-                if int(guess) < self.answer:
-                    print("\nToo Low, Try Again")
-                    print("\nThat was guess: {} . You have {} guesses left.".format(self.chance, self.guesses - self.chance))
+            print("==="*10)
+            print("To benefit from the weight room, you need to do the right amount of reps.")
+            print("\nUnfortunately your strength coach sucks and thinks you should guess the right number.")
+            print("\nHe has given you 3 chances to guess a number between 1 and 15.")
+            print("\nIf you get it right, he'll help you. Otherwise you are on your own.")
+
+            self.chance = 0
+            self.guesses = 3
+            self.answer = random.randrange(1, 15)
+            
+            while self.chance < self.guesses:
+                guess = input("\nWhat is your guess? ")
+                self.chance += 1
+                if guess == " " or not guess.isdigit():
+                    self.chance -= 1
+                    print("\nis an invalid option, please try again")
+                elif int(guess) == self.answer:
+                    print("\nCongrats {} your strength training is going to pay off. You increased your strength by 15!".format(self.player.name))
+                    self.player.strength = self.player.strength + 15
+                    break
+                elif self.chance < self.guesses:
+                    if int(guess) < self.answer:
+                        print("\nToo Low, Try Again")
+                        print("\nThat was guess: {} . You have {} guesses left.".format(self.chance, self.guesses - self.chance))
+                    else:
+                        print("\nToo High, Try Again")
+                        print("\nThat was guess: {} . You have {} guesses left.".format(self.chance, self.guesses - self.chance))
                 else:
-                    print("\nToo High, Try Again")
-                    print("\nThat was guess: {} . You have {} guesses left.".format(self.chance, self.guesses - self.chance))
-            else:
-                print("\nSorry your training is not going to be very good today. Train harder tommorrow!")
+                    print("\nSorry your training is not going to be very good today. Train harder tommorrow!")
+
+            # else:
+            #     print('\n'*50)
+            #     print('Hey {}... you already chosen your focus for today.'.format(self.player.name))
+            #     print('It is time to move on to tomorrow.')
+            #     print('The rest of the {} are waiting for you to join them!'.format(self.player.team))
+            #     print('\nSelect "0" from the menu below to get to the next day.')
 
 
     def play_nutrition(self):

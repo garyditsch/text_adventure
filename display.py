@@ -36,8 +36,11 @@ class Display():
     )
 
     def display_main(self):
+        print('==='*10)
+        print(self.current_day.player.name)
+        print(self.current_day.player.strength)
+        print('==='*10)
         while True:
-            print('=='*10)
             # print('\nYou currently have a strength of: {}'.format(banana.player.strength))
 
             menu_selection = get_menu_selection(self.MENU_ITEMS)
@@ -55,29 +58,17 @@ class Display():
     def display_focus(self):
         print('\n')
         print('=='*10)
-        # if self.training_option > 0:
         menu_selection = get_menu_selection(self.FOCUS_AREA)
 
         if menu_selection == "0": 
             pass
         elif menu_selection == "1":
-            # self.training_option -= 1
             self.current_day.play_training()
-            # pass
         elif menu_selection == "2":
-            # self.training_option -= 1
             self.current_day.play_nutrition()
             pass
         elif menu_selection == "3":
-            # self.training_option -= 1
             self.current_day.play_rest()
             pass
         else:
             display_selection_error(menu_selection)
-        # else:
-        #     print('\n'*50)
-        #     print('Hey {}... you already chosen your focus for today.'.format(self.player.name))
-        #     print('It is time to move on to tomorrow.')
-        #     print('The rest of the {} are waiting for you to join them!'.format(self.player.team))
-        #     print('\nSelect "0" from the menu below to get to the next day.')
-
