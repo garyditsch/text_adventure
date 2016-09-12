@@ -1,3 +1,5 @@
+import os
+
 def get_menu_selection(menu_items):
     """
     Display a menu and return the user's selection
@@ -36,9 +38,9 @@ class Display():
     )
 
     def display_main(self):
-        print('==='*10)
-        print(self.current_day.player.name)
-        print(self.current_day.player.strength)
+        os.system('clear')
+        print("Name: {}  |  Team: {}".format(self.current_day.player.name, self.current_day.player.team))
+        print("Current Strength:  {} ".format(self.current_day.player.strength))
         print('==='*10)
         while True:
             # print('\nYou currently have a strength of: {}'.format(banana.player.strength))
@@ -56,8 +58,10 @@ class Display():
                 display_selection_error(menu_selection)
 
     def display_focus(self):
-        print('\n')
-        print('=='*10)
+        os.system('clear')
+        print("Name: {}  |  Team: {}".format(self.current_day.player.name, self.current_day.player.team))
+        print("Current Strength:  {} ".format(self.current_day.player.strength))
+        print('==='*10)
         menu_selection = get_menu_selection(self.FOCUS_AREA)
 
         if menu_selection == "0": 

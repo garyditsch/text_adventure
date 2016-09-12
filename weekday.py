@@ -1,4 +1,6 @@
 import random 
+import os
+import sys
 
 class Training_actions():
 
@@ -11,11 +13,22 @@ class Training_actions():
     def play_training(self):
         if self.training_option > 0:
 
-            print("==="*10)
+            os.system('clear')
             print("To benefit from the weight room, you need to do the right amount of reps.")
             print("\nUnfortunately your strength coach sucks and thinks you should guess the right number.")
             print("\nHe has given you 3 chances to guess a number between 1 and 15.")
             print("\nIf you get it right, he'll help you. Otherwise you are on your own.")
+            print("\n"*5)
+            while True: 
+                blank = input("Press the ENTER key when you are ready to start training: ")
+                print(">>>")
+                if not blank == "":
+                    print('Hey.. what is going on? The weight room is serious business!')
+                    print('Try hitting ENTER again.')
+                    print(">>>")
+                    continue
+                else:
+                    break
 
             self.chance = 0
             self.guesses = 3
@@ -50,7 +63,7 @@ class Training_actions():
 
 
     def play_nutrition(self):
-        print("==="*10)
+        os.system('clear')
         print("Smart decision to think about your nutrition during the week.")
         print("Today you have 3 ways to supplement your food choices:")
         print("Your choices are: Whey, Creatine, Sword")
@@ -63,7 +76,7 @@ class Training_actions():
             if self.random_nutrition_choice == "WHEY":
                 print("\nUg.. bad choice! It must have been a bad batch and made your stomach upset. Train hard tomorrow.")
             elif self.random_nutrition_choice == "CREATINE":
-                print("\nCongrats your strength training is going to pay off. You increased your strength by 15!")
+                print("\nCongrats your nutritional knowledge is improving your performance. You increased your strength by 15!")
                 self.player.strength = self.player.strength + 15
             else:
                  print("\nUg.. bad choice! It must have been a bad batch and made your stomach upset. Train hard tomorrow.")
@@ -73,11 +86,11 @@ class Training_actions():
             elif self.random_nutrition_choice == "CREATINE":
                  print("\nUg.. bad choice! It must have been a bad batch and made your stomach upset. Train hard tomorrow.")
             else:
-                print("\nCongrats your strength training is going to pay off. You increased your strength by 15!")
+                print("\nCongrats your nutritional knowledge is improving your performance. You increased your strength by 15!")
                 self.player.strength = self.player.strength + 15
         else:
             if self.random_nutrition_choice == "WHEY":
-                print("\nCongrats your strength training is going to pay off. You increased your strength by 15!")
+                print("\nCongrats your nutritional knowledge is improving your performance. You increased your strength by 15!")
                 self.player.strength = self.player.strength + 15
             elif self.random_nutrition_choice == "CREATINE":
                  print("\nUg.. bad choice! It must have been a bad batch and made your stomach upset. Train hard tomorrow.")
@@ -86,8 +99,7 @@ class Training_actions():
         
 
     def play_rest(self):
-        print("\n"*50)
-        print("==="*10)
+        os.system('clear')
         print("Getting a good night's sleep is critical to good preparation.")
         print("Congrats on focusing on sound sleep.")
         print("Now go to sleep and see how rested you wake up.")
@@ -103,22 +115,20 @@ class Training_actions():
                 continue
             else:
                 if self.answer >= 50:
-                    print("\n"*50)
-                    print("==="*10)
+                    os.system('clear')
                     print('It looks like you got a great night of sleep. Your strength benefit from that!')
                     self.player.strength = self.player.strength + 15
                     print("==="*10)
                     break
                 else:
-                    print("\n"*50)
-                    print("==="*10)
+                    os.system('clear')
                     print('It seems that the coeds were out late and kept you up.')
                     print('Sometimes students just do not understand what it takes to prepare.')
                     print("==="*10)
                     break
 
     def play_football(self):
-        print("==="*10)
+        os.system('clear')
         print("How about we play some football!!")
         # played_football = True
 
@@ -156,7 +166,7 @@ class Training_actions():
                     print("\nThat was guess: {} . You have {} guesses left.".format(self.chance, self.guesses - self.chance))
             else:
                 if self.player.team == "HUSKERS":
-                    print("\n"*20)
+                    os.system('clear')
                     print("\nAs a Husker we expect more from you, but no worries your teammates earned the win regardless of your poor effort.")
                     print('\n')
                     print('           _____                         ____                   ')
@@ -169,7 +179,7 @@ class Training_actions():
                     print('=='*10)
                     sys.exit()
                 else:
-                    print("\n"*20)
+                    os.system('clear')
                     print("\nPrepare better. And consider transferring to a new school, your team lost again.")
                     print('\n')
                     print('           _____                         ____                   ')

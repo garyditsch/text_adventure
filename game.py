@@ -1,3 +1,4 @@
+import os
 from player import Player
 from weekday import Training_actions 
 from display import Display
@@ -46,8 +47,7 @@ class Game():
         for day in self.day_of_week: 
             display = Display()
             display.current_day = day
-            print("\n"*50)
-            print("=="*10)
+            os.system('clear')
             print("Today is {}".format(self.title[self.day_count]))
             self.day_count += 1
             
